@@ -1,9 +1,17 @@
 % main function
+%Copyright
+%{Bei Cao;Yunfeng Ge; Kaili Chen; Geng Liu; Qian Chen; Weixiang Chen;
+% geyunfeng@cug.edu.cn;
+% China University of Geosciences (Wuhan);
+% Cite as:
+% Rock Joints Detection from 3D point clouds Based on CIELAB Color Space
+% Keywords: Rock joints, semi-automatic identification, color space, point clouds, laser scanning
+%}
 clear 
 close all
 clc
 
-disp('Welcome to Use ¡¶Color Space-based Intelligent Measurement Software for Geometrical Parameters of discontinuities¡·!');
+disp('Welcome to Use Â¡Â¶Color Space-based Intelligent Measurement Software for Geometrical Parameters of discontinuitiesÂ¡Â·!');
 disp('Please select point cloud data:');
 %% Import data
 
@@ -27,16 +35,16 @@ switch(FileName(end-2:end))
         data_temp=pcread([PathName,FileName]);
         pcData=data_temp.Location;
     otherwise
-        error('Only support .dat/.xls/.xlsx/.pcd£¡');
+        error('Only support .dat/.xls/.xlsx/.pcdÂ£Â¡');
 end
 
 if(~ismatrix(pcData)) 
     error('Data dimensions are inconsistent!');
 elseif(size(pcData,2)<3) 
-    error('Data must be stored separately(x,y,z)£¡');
+    error('Data must be stored separately(x,y,z)Â£Â¡');
 else
     pcData=pcData(:,1:3);
-    disp('Data import succeeded£¡');
+    disp('Data import succeededÂ£Â¡');
     disp(['Your data dimension is:',num2str(size(pcData,1)),'x',num2str(size(pcData,2))]);
 end
 %Data import complete
@@ -87,7 +95,7 @@ while (ii==1)
         ii = 1;  
     end
 end
-disp('Edge removing is complete  £¡');
+disp('Edge removing is complete  Â£Â¡');
 %% Grouping
 
 rest_pcData=ql_pcData;
@@ -266,7 +274,7 @@ while d==1
     end
 end
 end
-disp('Clustering compelted£¡');
+disp('Clustering compeltedÂ£Â¡');
 %% Orientation
 
 for ii=1:n
